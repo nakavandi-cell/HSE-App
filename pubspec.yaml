@@ -1,6 +1,5 @@
 name: hse_app
-description: "HSE Management Application"
-publish_to: 'none'
+description: "A professional HSE Management App"
 version: 1.0.0+1
 
 environment:
@@ -10,6 +9,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+  sqflite: ^2.3.0
+  path: ^1.8.3
+  excel: ^4.0.2
+  path_provider: ^2.1.2 # برای پیدا کردن مسیر ذخیره فایل اکسل در گوشی
+  intl: ^0.19.0 # برای تاریخ شمسی یا فرمت‌دهی زمان
 
 dev_dependencies:
   flutter_test:
