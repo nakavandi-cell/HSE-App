@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'data/checklist_data.dart';
-import 'screens/inspection_form.dart';
+import 'package:hse_app/data/checklist_data.dart';
+import 'package:hse_app/screens/inspection_form.dart';
 
 void main() {
   runApp(const MyApp());
