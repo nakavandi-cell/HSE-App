@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../services/database_helper.dart';
+import '../services/excel_service.dart';
 
 class InspectionHistoryScreen extends StatefulWidget {
   const InspectionHistoryScreen({super.key});
@@ -28,11 +30,31 @@ class _InspectionHistoryScreenState extends State<InspectionHistoryScreen> {
     await _refreshData();
   }
 
+  Future<void> _exportAndShare() async {
+    try {
+      await ExcelService.shareExcelFile();
+    } on PlatformException {
+      // کاربر اشتراک‌گذاری را لغو کرد
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('خطا: $e')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('سوابق بازرسی'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            tooltip: 'خروجی و اشتراک‌گذاری',
+            onPressed: _exportAndShare,
+          ),
+        ],
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: inspectionsFuture,
