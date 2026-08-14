@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hse_app/data/checklist_data.dart';
 import 'package:hse_app/screens/inspection_form.dart';
+import 'package:hse_app/screens/inspection_history_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,6 +36,20 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('چک‌لیست‌های HSE'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.history),
+            tooltip: 'سوابق بازرسی',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const InspectionHistoryScreen(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
