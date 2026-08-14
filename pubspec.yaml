@@ -1,26 +1,25 @@
 name: hse_app
-description: "سامانه مدیریت بازرسی HSE با خروجی اکسل"
+description: "اپلیکیشن چک‌لیست‌های HSE"
 publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
+  sdk: ^3.3.0
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  sqflite: ^2.3.0          # دیتابیس محلی SQL
+  sqflite: ^2.3.0
   path: ^1.8.3
-  path_provider: ^2.1.2    # مسیر ذخیره فایل اکسل
-  excel: ^4.0.2            # تولید فایل اکسل
-  share_plus: ^7.2.2       # اشتراک/ذخیره فایل اکسل
-  intl: ^0.19.0            # فرمت تاریخ
+  excel: ^4.0.6
+  share_plus: ^7.2.2
+  path_provider: ^2.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
